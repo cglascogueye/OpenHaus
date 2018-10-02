@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 
 namespace OpenHaus
 {
@@ -31,11 +31,14 @@ namespace OpenHaus
         {
             //added starting code by CJ
             //***TODO***
-            //  1. Create three instances of TinyHaus to get a tours    *1/3*
-            //  2. Create method HausLog that will tell user the properties about each house    *0/1*
+            //  1. Create three instances of TinyHaus to get a tours    *3/3*   **FINISHED**
+            //  2. Create method HausLog that will tell user the properties about each house    *1/1*   **FINISHED**
             //  3. Allow user input to choose which house they want to tour *0/1*
             //  4. Allow user to tour houses until satisfied    *0/1*
+            //  5. Refine method HausLog    *0/1*
+            //  6. Make the creation of the TinyHaus class neater *0/1*
             Console.WriteLine("Welcome, welcome! Which property would you like to see?");
+            string response = Console.ReadLine();
 
             TinyHaus White = new TinyHaus
             {
@@ -46,7 +49,33 @@ namespace OpenHaus
                 NumRooms = 5
             };
 
-            HausLog(White);
+            TinyHaus Red = new TinyHaus
+            {
+                HausName = "Red House",
+                HausColor = "Red",
+                PricePointLow = 45000.00,
+                PricePointHigh = 75000.00,
+                NumRooms = 8
+            };
+
+            TinyHaus Yellow = new TinyHaus
+            {
+                HausName = "Yellow House",
+                HausColor = "Yellow",
+                PricePointLow = 65000.00,
+                PricePointHigh = 90000.00,
+                NumRooms = 13
+            };
+
+            if (response == "white")
+                HausLog(White);
+            if (response == "red")
+                HausLog(Red);
+            if (response == "yellow")
+                HausLog(Yellow);
+            else
+                Console.WriteLine("choose isn't availible");
+
         }
     }
 }
